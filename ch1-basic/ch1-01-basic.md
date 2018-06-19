@@ -71,7 +71,7 @@ func variableShorter()  {
  - byte, rune(字符类型 32位)
  - float32, float64, complex64, complex128 (complex复数 complex64实部和虚部分别是32位， complex128实部和虚部分别是64位)
 
- ### 复数回顾
+ ## 复数回顾
  - i = 根号-1
  - 复数：3 + 4i
  - |3 + 4i| = 5
@@ -83,7 +83,7 @@ func euler() {
 }
  ```
 
- ### 强制类型转换
+ ## 强制类型转换
  - 类型转换是强制的
  - var a,b int = 3, 4
  - var c int = math.Sqrt(a*a + b*b) 坑
