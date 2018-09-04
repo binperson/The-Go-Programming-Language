@@ -34,6 +34,7 @@ import "fmt"
 
 //函数外层必须有var和func关键字  不能:=
 var ss = 3
+// 可以少写var
 var (
 	aa = "kkk"
 	bb = true
@@ -69,7 +70,7 @@ func variableShorter()  {
 
 ## 内建变量类型
  - bool string
- - (u)int, (u)int8, (u)int16, (u)int32, (u)int64, uintptr(指针)  加u就是无符号整数，不加就是无符号整数
+ - (u)int, (u)int8, (u)int16, (u)int32, (u)int64, uintptr(指针)  加u就是无符号整数，不加就是无符号整数 不规定长度在32位系统内是32位 在64位系统内是64位 uintptr长度也是跟着操作系统来的
  - byte, rune(字符类型 32位)
  - float32, float64, complex64, complex128 (complex复数 complex64实部和虚部分别是32位， complex128实部和虚部分别是64位)
 
@@ -79,6 +80,10 @@ func variableShorter()  {
  - |3 + 4i| = 5
 
  ```go
+func euler()  {
+	c := 3 + 4i
+	fmt.Println(cmplx.Abs(c)) // 5
+}
 func euler() {
 	fmt.Printf("%.3f\n",
 		cmplx.Exp(1i*math.Pi)+1) // (0.000+0.000i)
