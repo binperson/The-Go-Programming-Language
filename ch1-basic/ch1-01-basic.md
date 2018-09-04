@@ -20,6 +20,7 @@ func variableZeroValue() {
 
 ```go
 func variableInitialValue() {
+        // 变量赋初值
 	var a, b int = 3, 4
 	var s string = "abc"
 	fmt.Println(a, b, s) // 3 4 abc
