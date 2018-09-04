@@ -1,6 +1,6 @@
 ## 函数
  - 函数可返回多个值
-
+ - 中断程序需处理
 ```go
 func eval1(a, b int, op string) (int, error) {
 	switch op {
@@ -63,13 +63,7 @@ fmt.Println(apply(
 			return int(math.Pow(float64(a), float64(b)))
 		},
 		3,4))//calling function main.main.func1 with args (3, 4) 81 第一个main是包名
-```
-## 指针
- - 指针不能运算
- - go语言只有值传递一种方式
-
-```go
-
+		
 func sum(numbers ...int) int {
 	s := 0
 	for i := range numbers {
@@ -77,6 +71,12 @@ func sum(numbers ...int) int {
 	}
 	return s
 }
+```
+## 指针
+ - 指针不能运算
+ - go语言只有值传递一种方式
+
+```go
 
 func swap(a, b int)  {
 	a, b = b, a
@@ -98,3 +98,4 @@ fmt.Println(a, b)//4, 3
  - 返回值类型写在最后面
  - 可返回多个值
  - 函数作为参数
+ - 没有默认参树，可选参数，函数重载，操作符重载
