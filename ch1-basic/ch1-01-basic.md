@@ -124,7 +124,7 @@ func main() {
  - const filename = "abc.txt"
  - const 数值可作为各种类型使用
  - const a, b = 3,4
- - var c int = int(math.Sqrt(a*a + b*b))
+ - var c int = int(math.Sqrt(a * a + b * b))
 
  ```go
  func consts() {
@@ -132,6 +132,10 @@ func main() {
 	const (
 		a, b = 3, 4
 	)
+	/* cannot use a * a + b * b (type int) as type float64 in argument to math.Sqrt
+	const a int  = 3
+	const b int  = 4
+	*/
 	var c = math.Sqrt(a*a + b*b)
 	fmt.Println(c)//5
 	var d int = int(math.Sqrt(a*a + b*b))
