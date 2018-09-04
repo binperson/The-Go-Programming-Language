@@ -93,7 +93,7 @@ func euler() {
  ## 强制类型转换
  - 类型转换是强制的
  - var a,b int = 3, 4
- - var c int = math.Sqrt(a*a + b*b) 坑
+ - var c int = math.Sqrt(a * a + b * b) 坑  // sqrt.go -> func Sqrt(x float64) float64 
  - var c int = int(math.Sqrt(float64(a*a + b*b))) //float转出来有问题
 
  ```go
