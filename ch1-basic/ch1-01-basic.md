@@ -6,6 +6,7 @@
  - var s1, s2 string = "hello", "world"
  - 可以放在函数内，或直接放在包内
  - 使用var()集中定义变量
+ - 变量名在变量类型前
 
 [golang fmt格式“占位符”](https://studygolang.com/articles/2644)
 
