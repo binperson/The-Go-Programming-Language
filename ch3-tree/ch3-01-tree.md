@@ -345,6 +345,86 @@ func main() {
 }
 ```
 
+```go
+// interface
+
+package queue
+
+// A FIFO queue.
+type Queue []interface{}
+
+// Pushes the element into the queue.
+// 		e.g. q.Push(123)
+func (q *Queue) Push(v interface{}) {
+	*q = append(*q, v)
+}
+
+// Pops element from head.
+func (q *Queue) Pop() interface{} {
+	head := (*q)[0]
+	*q = (*q)[1:]
+	return head
+}
+
+// Returns if the queue is empty or not.
+func (q *Queue) IsEmpty() bool {
+	return len(*q) == 0
+}
+```
+
+```go
+//限定 
+package queue
+
+// A FIFO queue.
+type Queue []interface{}
+
+// Pushes the element into the queue.
+// 		e.g. q.Push(123)
+func (q *Queue) Push(v int) {
+	*q = append(*q, v)
+}
+
+// Pops element from head.
+func (q *Queue) Pop() int {
+	head := (*q)[0]
+	*q = (*q)[1:]
+	return head.(int)
+}
+
+// Returns if the queue is empty or not.
+func (q *Queue) IsEmpty() bool {
+	return len(*q) == 0
+}
+```
+
+```go
+// 可能运行时报错
+
+package queue
+
+// A FIFO queue.
+type Queue []interface{}
+
+// Pushes the element into the queue.
+// 		e.g. q.Push(123)
+func (q *Queue) Push(v interface{}) {
+	*q = append(*q, v.(int))
+}
+
+// Pops element from head.
+func (q *Queue) Pop() int {
+	head := (*q)[0]
+	*q = (*q)[1:]
+	return head.(int)
+}
+
+// Returns if the queue is empty or not.
+func (q *Queue) IsEmpty() bool {
+	return len(*q) == 0
+}
+```
+
 ### GOPATH环境变量
 
  - 默认在～/go(unix,linx), %USERPROFILE%\go(windows)
